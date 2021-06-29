@@ -24,7 +24,7 @@ let Image = (props) => {
             // console.log(entry.isIntersecting, props)
         }, options)
         observer.observe(selectedImage)
-    }, [])
+    }, [ref])
 
     return (
         <div>
