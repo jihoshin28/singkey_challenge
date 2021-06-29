@@ -35,6 +35,7 @@
   flex-flow: row;
   margin-bottom: 5%;
   background-color: rgb(68, 68, 68);
+  height: 170px;
 }
 
 .poster {
@@ -42,7 +43,7 @@
 }
 
 .info {
-  display:flex; 
+  display: flex; 
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start ;
@@ -55,7 +56,7 @@
 } 
 
 .title {
-  color:rgb(240, 240, 240)
+  color:rgb(240, 240, 240);
 }
 
 .genres {
@@ -64,10 +65,22 @@
 }
 
 .titleDiv {
+  margin-top: -30px;
   display: flex;
 }
 
 .title p :nth-child(1) {
   margin-left: 10px; 
-
 }
+
+.trailer-link {
+  color:rgb(240, 240, 240);
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.homepage-link{
+  color:rgb(173, 173, 173);
+  font-size: .7em;
+  text-decoration: none;
+} 

@@ -65,12 +65,8 @@ const TvShowCard = ({title, rating, id}) => {
                         </h6> 
                     </div>
                 </div> 
-                <div>
-                    <a className = "homepage-link"  href = {network.url}>Playing On: {network.name}</a>
-                </div>
-                <div>
-                    <a className = "trailer-link"  href = {`https://www.youtube.com/results?search_query=${urlQuery()}trailer`}>Watch Trailer</a>
-                </div>
+                <a className = "homepage-link"  href = {network.url}>Playing On: {network.name}</a>                
+                <a className = "trailer-link"  href = {`https://www.youtube.com/results?search_query=${urlQuery()}trailer`}>Watch Trailer</a>
             </div>
 
         </div>
