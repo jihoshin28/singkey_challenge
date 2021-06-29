@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {getTrending} from './api'
+import MovieCard from './components/MovieCard'
+import TvShowCard from './components/TvShowCard'
 import './App.css';
 
 function App() {
