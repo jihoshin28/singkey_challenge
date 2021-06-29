@@ -4,11 +4,17 @@ import { getTvShow } from '../api'
 const TvShowCard = ({poster, title, rating, id}) => {
 
     const [genres, setGenres] = useState([])
+    const [network, setNetwork] = useState('')
 
     useEffect(() => {
         getTvShow(id)
         .then((res) => {
+            console.log(res)
             setGenres(res.data.genres)
+            setNetwork({
+                url: res.data.homepage, 
+                name: res.data.networks[0].name
+            })
         })
         .catch((err) => {
             console.log(err)
@@ -49,7 +55,7 @@ const TvShowCard = ({poster, title, rating, id}) => {
                     </div>
                 </div> 
                 <div>
-                    <a className = "trailer-link"  href = "www.google.com">Watch Trailer</a>
+                    <a className = "trailer-link"  href = {network.url}>Playing On: {network.name}</a>
                 </div>
             </div>
 
