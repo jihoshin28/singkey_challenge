@@ -61,11 +61,25 @@ function App() {
     <div className="App">
       <img className = "logo" src = {process.env.PUBLIC_URL + '/movie_db_logo.png'}></img>
       <div className = "header">
-        <div>
+        <div className = "header-row">
           <h3>Trending Movies</h3>
+          <div className = "header-select">
+            <p>Sort by: </p>
+            <select id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+            </select>
+          </div>
         </div>
-        <div>
+        <div className = "header-row">
           <h3>Trending Tv Shows</h3>
+          <div className = "header-select">
+            <p>Sort by: </p>
+            <select id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+            </select>
+          </div>
         </div>
       </div>
       <div className = "display-section">

@@ -10,22 +10,44 @@
   margin-top: 20px;
 }
 
+.header-row {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+
+.header-select {
+  display: flex; 
+  align-items: center;
+  color:rgb(240, 240, 240);
+}
+
+.header-row p {
+  margin-right: 5px;
+}
+
+.header-row select {
+  height: 20px;
+}
+
 .header {
   display: flex;
   flex-flow: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .header h3 {
   color:rgb(240, 240, 240);
+  margin: 30px;
 }
 
 .display-section {
   display: flex;
   flex-flow: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .transition {
