@@ -1,5 +1,13 @@
 .App{
-  background-color: rgb(56, 56, 56)
+  background-color: rgb(56, 56, 56);
+  z-index: 0;
+}
+
+.logo {
+  width: 100px;
+  z-index: 5;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .header {
@@ -11,7 +19,6 @@
 
 .header h3 {
   color:rgb(240, 240, 240);
-  margin: 30px;
 }
 
 .display-section {

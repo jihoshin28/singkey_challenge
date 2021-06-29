@@ -59,6 +59,7 @@ function App() {
   
   return (
     <div className="App">
+      <img className = "logo" src = {process.env.PUBLIC_URL + '/movie_db_logo.png'}></img>
       <div className = "header">
         <div>
           <h3>Trending Movies</h3>
