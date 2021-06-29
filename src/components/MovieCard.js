@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import { getMovie } from '../api'
-const MovieCard = ({poster, title, rating, id}) => {
+const MovieCard = ({title, rating, id}) => {
 
+    const [poster, setPoster] = useState('')
     const [genres, setGenres] = useState([])
 
     useEffect(() => {
         getMovie(id)
         .then((res) => {
             setGenres(res.data.genres)
+            setPoster(res.data.poster_path)
         })
         .catch((err) => {
             console.log(err)

@@ -33,10 +33,10 @@ function App() {
     if(!movies){
       return <div>Loading Movies...</div>
     } else {
-      return movies.map(({backdrop_path, original_title, vote_average, id}) => {
+      return movies.map(({original_title, vote_average, id}) => {
         return (
           <LazyLoad>
-            <MovieCard poster = {backdrop_path} title = {original_title} rating = {vote_average} id = {id}/>
+            <MovieCard title = {original_title} rating = {vote_average} id = {id}/>
           </LazyLoad>
         )
       })
@@ -47,10 +47,10 @@ function App() {
     if(!tvShows){
       return<div>Loading Shows...</div> 
     } else {
-      return tvShows.map(({backdrop_path, name, vote_average, id}) => {
+      return tvShows.map(({name, vote_average, id}) => {
         return (
           <LazyLoad>
-            <TvShowCard poster = {backdrop_path} title = {name} rating = {vote_average} id = {id}/>
+            <TvShowCard title = {name} rating = {vote_average} id = {id}/>
           </LazyLoad>
         )
       })

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import { getTvShow } from '../api'
 
-const TvShowCard = ({poster, title, rating, id}) => {
+const TvShowCard = ({title, rating, id}) => {
 
+    const[poster, setPoster] = useState('')
     const [genres, setGenres] = useState([])
     const [network, setNetwork] = useState('')
 
@@ -15,6 +16,7 @@ const TvShowCard = ({poster, title, rating, id}) => {
                 url: res.data.homepage, 
                 name: res.data.networks[0].name
             })
+            setPoster(res.data.poster_path)
         })
         .catch((err) => {
             console.log(err)
@@ -56,6 +58,9 @@ const TvShowCard = ({poster, title, rating, id}) => {
                 </div> 
                 <div>
                     <a className = "trailer-link"  href = {network.url}>Playing On: {network.name}</a>
+                </div>
+                <div>
+                    <a className = "trailer-link"  href = "www.google.com">Watch Trailer</a>
                 </div>
             </div>
 
