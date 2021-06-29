@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {getTrending} from './api'
 import MovieCard from './components/MovieCard'
 import TvShowCard from './components/TvShowCard'
+import LazyLoad from './components/LazyLoad'
 import './App.css';
 
 function App() {
@@ -34,9 +35,9 @@ function App() {
     } else {
       return movies.map(({backdrop_path, original_title, vote_average, id}) => {
         return (
-         
-          <MovieCard poster = {backdrop_path} title = {original_title} rating = {vote_average} id = {id}/>
-          
+          <LazyLoad>
+            <MovieCard poster = {backdrop_path} title = {original_title} rating = {vote_average} id = {id}/>
+          </LazyLoad>
         )
       })
     }
@@ -48,9 +49,9 @@ function App() {
     } else {
       return tvShows.map(({backdrop_path, name, vote_average, id}) => {
         return (
-
-          <TvShowCard poster = {backdrop_path} title = {name} rating = {vote_average} id = {id}/>
-
+          <LazyLoad>
+            <TvShowCard poster = {backdrop_path} title = {name} rating = {vote_average} id = {id}/>
+          </LazyLoad>
         )
       })
     }
