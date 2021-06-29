@@ -102,10 +102,48 @@
   margin-left: 10px; 
 }
 
+.trailer-link:after {
+  backface-visibility: hidden;
+  border: none;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.trailer-link:hover:after {
+  color: rgb(240, 240, 240);
+  border: 1px solid rgb(240, 240, 240);
+  backface-visibility: visible;
+  border-color: rgb(240, 240, 240);
+  transition: width 350ms ease-in-out;
+  width: 100%;
+}
+
 .trailer-link {
   color:rgb(240, 240, 240);
   margin-top: 10px;
   text-decoration: none;
+}
+
+.homepage-link:after {
+  backface-visibility: hidden;
+  border: none;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.homepage-link:hover:after {
+  color: rgb(173, 173, 173);
+  border: 1px solid rgb(173, 173, 173);
+  backface-visibility: visible;
+  border-color: rgb(173, 173, 173);
+  transition: width 350ms ease-in-out;
+  width: 100%;
 }
 
 .homepage-link{
