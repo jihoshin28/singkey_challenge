@@ -39,6 +39,15 @@ const TvShowCard = ({title, rating, id}) => {
         }
     }
 
+    let urlQuery = () => {
+        let splitTitle = title.split(' ')
+        let result = ''
+        for(let i = 0; i < splitTitle.length; i++){
+            result += `${splitTitle[i]}+`
+        }
+        return result
+    }
+
     return (
         <div className = "card">
             <img className = "poster" src = {`https://image.tmdb.org/t/p/w500/${poster}`}/>
@@ -57,10 +66,10 @@ const TvShowCard = ({title, rating, id}) => {
                     </div>
                 </div> 
                 <div>
-                    <a className = "trailer-link"  href = {network.url}>Playing On: {network.name}</a>
+                    <a className = "homepage-link"  href = {network.url}>Playing On: {network.name}</a>
                 </div>
                 <div>
-                    <a className = "trailer-link"  href = "www.google.com">Watch Trailer</a>
+                    <a className = "trailer-link"  href = {`https://www.youtube.com/results?search_query=${urlQuery()}trailer`}>Watch Trailer</a>
                 </div>
             </div>
 
