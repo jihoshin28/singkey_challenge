@@ -14,7 +14,7 @@ const MovieCard = ({title, rating, id}) => {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, [id])
 
     let renderGenres = () => {
         if(!genres){

@@ -33,10 +33,10 @@ function App() {
     if(!movies){
       return <div>Loading Movies...</div>
     } else {
-      return movies.map(({original_title, vote_average, id}) => {
+      return movies.map(({title, vote_average, id}) => {
         return (
           <LazyLoad>
-            <MovieCard title = {original_title} rating = {vote_average} id = {id}/>
+            <MovieCard title = {title} rating = {vote_average} id = {id}/>
           </LazyLoad>
         )
       })
@@ -56,7 +56,41 @@ function App() {
       })
     }
   }
-  
+
+  const sortData = (e, value) => {
+    let result
+    let data
+    if(value === 'movie'){
+      data = [...movies]
+    } else if(value === 'tv'){
+      data = [...tvShows]
+    }
+
+    if(e.target.value === 'high-rate'){
+      data.sort((a,b) => b.vote_average - a.vote_average)
+    } else if(e.target.value === 'low-rate') {
+      data.sort((a,b) => a.vote_average - b.vote_average)
+    } else if(e.target.value === 'a') {
+      if(value === 'tv') {
+        data.sort((a,b) => a.name.localeCompare(b.name))
+      } else {
+        data.sort((a,b) => a.title.localeCompare(b.title))
+      }
+    } else if(e.target.value === 'z') {
+      if(value === 'tv') {
+        data.sort((a,b) => b.name.localeCompare(a.name))
+      } else {
+        data.sort((a,b) => b.title.localeCompare(a.title))
+      }
+    }
+    console.log(data)
+    if(value === 'movie'){
+      setMovies(data)
+    } else if(value === 'tv'){
+      setTvShows(data)
+    }
+  }
+
   return (
     <div className="App">
       <img className = "logo" src = {process.env.PUBLIC_URL + '/movie_db_logo.png'}></img>
@@ -65,9 +99,11 @@ function App() {
           <h3>Trending Movies</h3>
           <div className = "header-select">
             <p>Sort by: </p>
-            <select id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
+            <select onChange = {(e) => sortData(e, 'movie')}>
+              <option value="high-rate">Highest Rating</option>
+              <option value="low-rate">Lowest Rating</option>
+              <option value="a">A-Z</option>
+              <option value="z">Z-A</option>
             </select>
           </div>
         </div>
@@ -75,9 +111,11 @@ function App() {
           <h3>Trending Tv Shows</h3>
           <div className = "header-select">
             <p>Sort by: </p>
-            <select id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
+            <select onChange = {(e) => sortData(e, 'tv')}>
+              <option value="high-rate">Highest Rating</option>
+              <option value="low-rate">Lowest Rating</option>
+              <option value="a">A-Z</option>
+              <option value="z">Z-A</option>
             </select>
           </div>
         </div>

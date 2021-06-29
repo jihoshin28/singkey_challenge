@@ -10,7 +10,7 @@ const TvShowCard = ({title, rating, id}) => {
     useEffect(() => {
         getTvShow(id)
         .then((res) => {
-            console.log(res)
+            console.log(res.data.name)
             setGenres(res.data.genres)
             setNetwork({
                 url: res.data.homepage, 
@@ -21,7 +21,7 @@ const TvShowCard = ({title, rating, id}) => {
         .catch((err) => {
             console.log(err)
         })
-    }, [])
+    }, [id])
 
     let renderGenres = () => {
         if(!genres){
